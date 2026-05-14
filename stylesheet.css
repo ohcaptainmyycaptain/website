@@ -1,0 +1,130 @@
+/* ============================================
+   1. RESET / NORMALISIERUNG
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box; /* Rahmen und Abstände werden in die Breite eingerechnet, nicht draufaddiert */
+  margin: 0;              /* Entfernt alle Standard-Außenabstände des Browsers */
+  padding: 0;             /* Entfernt alle Standard-Innenabstände des Browsers */
+}
+
+/* ============================================
+   2. BASIS-STYLES
+   ============================================ */
+
+body {
+  background: radial-gradient(circle at top right, #f38cf3, #8d3762);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Schriftart – Browser nimmt die erste verfügbare */
+  color: white;    /* Schriftfarbe – gilt automatisch für alle Kindelemente (h1, p, usw.) */
+  padding: 2rem;  /* Innenabstand – Inhalt hat rundum Luft zum Rand */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+#anfang {
+  align-self: flex-start;
+  margin-left: -20px;
+  margin-top: 15px;
+  padding: 20px 50px; /* 20px oben/unten, 50px links/rechts */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* ============================================
+   3. BILDER
+   ============================================ */
+
+#weed {
+  width: 250px; /* Etwas kleiner, damit mehr Platz für Text ist */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  /* Platzierung */
+  align-self: flex-start; 
+  margin-left: 20px;   /* Ein bisschen Abstand zum Rand, kein Minus! */
+  margin-top: 10px;    /* Kleiner Abstand nach oben */
+  margin-bottom: 20px; /* Abstand zum Text darunter (HEYYYY...) */
+}
+  
+/* ============================================
+   4. BUTTONS
+   ============================================ */
+
+button {
+  margin-top: 1rem;       /* Abstand nach oben – trennt den Button vom Inhalt darüber */
+  padding: 0.5rem 1.2rem; /* Innenabstand: oben/unten 0.5rem, links/rechts 1.2rem */
+  font-size: 1rem;        /* Schriftgröße – 1rem entspricht der Basis-Schriftgröße (meist 16px) */
+  cursor: pointer;        /* Mauszeiger wird zur Hand – signalisiert Klickbarkeit */
+  position: relative;
+  transition: 0.3s; /* ← hier, nicht in :hover  Übergang wird weich animiert */
+}
+
+button:hover {
+  background-color: blue;   /* Hintergrund ändert sich */
+  color: white;             /* Schriftfarbe ändert sich */
+  transform: scale(1.05);   /* Button wird leicht größer */
+}
+
+.button-test {
+  display: flex;
+  gap: 10px;           /* Der Abstand zwischen Input und Button */
+  justify-content: center; /* Zentriert beides zusammen in der Mitte */
+  margin-top: 20px;    /* Abstand zum Text darüber */
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-start;
+  margin-top: 15px;
+}
+
+#mydialog {
+  position: fixed; /* losgelöst vom normalen Seitenfluss */
+  top: 50%;        /* von oben */
+  left: 50%;       /* von links */
+  transform: translate(-50%, -50%); /* exakt zentriert */
+  border-radius: 8px;        /* runde Ecken */
+  padding: 20px;
+  text-align: center;        /* Text und Button zentriert */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+#closebutton {
+  display: block;
+  margin: 10px auto 0;       /* ← zentriert den Button */
+}
+
+
+#mydialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Macht den Hintergrund dunkel-transparent */
+  backdrop-filter: blur(4px);            /* Macht den Hintergrund unscharf */
+}
+
+.newworld {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* ← Inhalt nach rechts */
+  align-items: flex-end;    /* ← Inhalt nach oben */
+  min-height: 200px;          /* ← ohne Höhe hat "oben" keinen Effekt */
+  padding: 20px 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#greeting { text-align: center; font-size: 20px;}
+#welcometext { font-size: 20px;}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+}
