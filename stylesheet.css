@@ -35,12 +35,13 @@ body {
    ============================================ */
 
 #weed {
-  width: 250px; /* Etwas kleiner, damit mehr Platz für Text ist */
+  width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  height: auto;
 
   /* Platzierung */
   align-self: flex-start; 
@@ -48,7 +49,7 @@ body {
   margin-top: 10px;    /* Kleiner Abstand nach oben */
   margin-bottom: 20px; /* Abstand zum Text darunter (HEYYYY...) */
 }
-  
+
 /* ============================================
    4. BUTTONS
    ============================================ */
