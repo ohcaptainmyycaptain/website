@@ -134,7 +134,7 @@
 </head>
 <body>
 
-  <h1>🦕 L13S D1N0</h1>
+  <h1 id="dinotitle"></h1>
   <div id="score-display">SCORE: <span id="score">0</span> &nbsp;|&nbsp; BEST: <span id="best">0</span></div>
 
   <div id="game-container">
@@ -305,6 +305,12 @@
       dinoBody.textContent = '💀';
       setTimeout(() => dinoBody.textContent = '🦕', 800);
     }
+    window.onload = function() {
+        let gespeicherterName = localStorage.getItem("user_name");
+        if (gespeicherterName) {
+            document.getElementById("dinotitle").textContent = gespeicherterName + "'s D1N0";
+        }
+    };
   </script>
 </body>
 </html>
