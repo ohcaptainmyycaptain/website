@@ -174,3 +174,16 @@ button:hover {
   align-items: flex-start;
   width: 100%;
 }
+
+#gif-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+#gif-wrapper img {
+  width: 300px;        /* Größe anpassen wie du willst */
+  border-radius: 20px; /* optional – passt zum Style deiner Seite */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
