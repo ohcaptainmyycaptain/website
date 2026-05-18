@@ -46,6 +46,8 @@ body {
 
 #anfang {
   align-self: flex-start;
+  flex-shrink: 0;  /* ← verhindert dass es kleiner wird */
+  width: 250px;    /* ← feste Breite */
   margin-left: -20px;
   margin-top: 15px;
   padding: 20px 50px; /* 20px oben/unten, 50px links/rechts */
@@ -176,14 +178,18 @@ button:hover {
 }
 
 #gif-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  width: 100%;
+  align-items: center;
+  flex: 1;           /* ← nimmt den übrigen Platz in der row ein */
 }
 
 #gif-wrapper img {
-  width: 300px;        /* Größe anpassen wie du willst */
-  border-radius: 20px; /* optional – passt zum Style deiner Seite */
+  width: 250px;
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
